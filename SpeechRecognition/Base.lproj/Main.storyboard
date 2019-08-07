@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1CE-l0-2Ee">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SpeechRecognition-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="SpeechRecognition" customClass="ViewController" customModule="SpeechRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bzO-88-p7d"/>
+                        <viewControllerLayoutGuide type="bottom" id="oDF-dw-X3L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ehX-mF-t9n">
+                                <rect key="frame" x="16" y="138" width="342" height="509"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfY-jj-2HQ">
+                                <rect key="frame" x="8" y="52" width="359" height="55"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="5hS-Tb-4Jl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <state key="normal" title="Tap to transcribe">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="3R4-C3-uqL"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" alpha="0.5" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="UIn-Tp-kZ8">
+                                <rect key="frame" x="8" y="102.5" width="359" height="4"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="BwE-ye-s4r"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ehX-mF-t9n" secondAttribute="trailing" constant="17" id="0ys-OU-Hen"/>
+                            <constraint firstItem="bfY-jj-2HQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="7pA-qb-myf"/>
+                            <constraint firstItem="UIn-Tp-kZ8" firstAttribute="trailing" secondItem="bfY-jj-2HQ" secondAttribute="trailing" id="8eO-fv-Vuw"/>
+                            <constraint firstItem="ehX-mF-t9n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="ExJ-Mr-jFy"/>
+                            <constraint firstItem="ehX-mF-t9n" firstAttribute="top" secondItem="bfY-jj-2HQ" secondAttribute="bottom" constant="31" id="Kdc-ZR-0lo"/>
+                            <constraint firstItem="UIn-Tp-kZ8" firstAttribute="leading" secondItem="bfY-jj-2HQ" secondAttribute="leading" id="Rtf-WF-feL"/>
+                            <constraint firstAttribute="trailing" secondItem="bfY-jj-2HQ" secondAttribute="trailing" constant="8" id="YTe-pl-nLx"/>
+                            <constraint firstItem="bfY-jj-2HQ" firstAttribute="top" secondItem="bzO-88-p7d" secondAttribute="bottom" constant="8" id="gBI-Na-IRs"/>
+                            <constraint firstItem="UIn-Tp-kZ8" firstAttribute="bottom" secondItem="bfY-jj-2HQ" secondAttribute="bottom" constant="-1.5" id="hCq-JZ-nVN"/>
+                            <constraint firstItem="oDF-dw-X3L" firstAttribute="top" secondItem="ehX-mF-t9n" secondAttribute="bottom" constant="20" id="m56-1d-6Yd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Speech Recognition" id="LwA-Nj-2vA">
+                        <barButtonItem key="rightBarButtonItem" title="Input" id="DAB-59-WC3">
+                            <connections>
+                                <action selector="didTapInputDevicesButton:" destination="BYZ-38-t0r" id="8BN-QP-eqM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amplitudeMeter" destination="UIn-Tp-kZ8" id="wSE-hm-FIs"/>
+                        <outlet property="recordButton" destination="bfY-jj-2HQ" id="gtT-OC-xp9"/>
+                        <outlet property="transcriptionTextArea" destination="ehX-mF-t9n" id="eXg-cS-QDV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1456.8" y="163.26836581709148"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lnn-u5-q9V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1CE-l0-2Ee" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vuk-wa-pJL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="alM-5D-7L3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G8D-vA-0Hx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="517.60000000000002" y="163.26836581709148"/>
+        </scene>
+    </scenes>
+</document>
